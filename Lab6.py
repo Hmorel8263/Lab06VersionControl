@@ -24,6 +24,22 @@ def encoder(password):
 
     return encoded_message
 
+# Angelina Gonzalez
+def decoder(encoded_password): # decodes password
+  new_password = ''
+
+  for element in encoded_password: # goes through each element
+    new_num = int(element)
+    new_num -= 3 # subtracts 3
+  
+    if new_num < 0:
+      new_num += 10 # adds 10 if number becomes negative
+  
+    new_password += str(new_num) # adds in string
+  
+  return new_password # returns str
+
+
 if __name__ == '__main__':
 
     condition = True
@@ -39,7 +55,7 @@ if __name__ == '__main__':
             print("Your password has been encoded and stored!")
 
         elif user_input == 2:
-            print("The encoded password is ", encoded_password, ", and the original password is ", ) #Put the rest of the decoder here
+            print("The encoded password is ", encoded_password, ", and the original password is ", decoder(encoded_password), ".") 
 
         elif user_input == 3:
             break
